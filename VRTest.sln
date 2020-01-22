@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest", "VRTest\VRTest.csproj", "{D037DC59-8AF7-4601-92B2-BEE6346CA835}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NPVEngine", "NPVEngine\NPVEngine.csproj", "{B69FFFE7-7438-490A-AC8B-17BEDBF3B65C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.UnitTest", "VRTest.UnitTest\VRTest.UnitTest.csproj", "{F8E9C88C-E803-4E4D-88AD-A704972C22B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.Api", "VRTest.Api\VRTest.Api.csproj", "{3D5CF28D-97FF-48F1-9001-C36386197D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.Entities", "VRTest.Entities\VRTest.Entities.csproj", "{625305D9-43E1-4361-9265-5A32D91AC154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.DataAccess", "VRTest.DataAccess\VRTest.DataAccess.csproj", "{0102D683-ECAD-4E4A-9DB3-769F1E37D146}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D037DC59-8AF7-4601-92B2-BEE6346CA835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D037DC59-8AF7-4601-92B2-BEE6346CA835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D037DC59-8AF7-4601-92B2-BEE6346CA835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D037DC59-8AF7-4601-92B2-BEE6346CA835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69FFFE7-7438-490A-AC8B-17BEDBF3B65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69FFFE7-7438-490A-AC8B-17BEDBF3B65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69FFFE7-7438-490A-AC8B-17BEDBF3B65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69FFFE7-7438-490A-AC8B-17BEDBF3B65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E9C88C-E803-4E4D-88AD-A704972C22B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E9C88C-E803-4E4D-88AD-A704972C22B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E9C88C-E803-4E4D-88AD-A704972C22B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E9C88C-E803-4E4D-88AD-A704972C22B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D5CF28D-97FF-48F1-9001-C36386197D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5CF28D-97FF-48F1-9001-C36386197D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5CF28D-97FF-48F1-9001-C36386197D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5CF28D-97FF-48F1-9001-C36386197D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625305D9-43E1-4361-9265-5A32D91AC154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625305D9-43E1-4361-9265-5A32D91AC154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625305D9-43E1-4361-9265-5A32D91AC154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625305D9-43E1-4361-9265-5A32D91AC154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D3591FF-2810-4FD3-B589-E631EC1AD85F}
+	EndGlobalSection
+EndGlobal
