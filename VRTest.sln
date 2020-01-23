@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NPVEngine", "NPVEngine\NPVE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.UnitTest", "VRTest.UnitTest\VRTest.UnitTest.csproj", "{F8E9C88C-E803-4E4D-88AD-A704972C22B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.Api", "VRTest.Api\VRTest.Api.csproj", "{3D5CF28D-97FF-48F1-9001-C36386197D29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.Api", "VRTest.Api\VRTest.Api.csproj", "{3D5CF28D-97FF-48F1-9001-C36386197D29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.Entities", "VRTest.Entities\VRTest.Entities.csproj", "{625305D9-43E1-4361-9265-5A32D91AC154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.Entities", "VRTest.Entities\VRTest.Entities.csproj", "{625305D9-43E1-4361-9265-5A32D91AC154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.DataAccess", "VRTest.DataAccess\VRTest.DataAccess.csproj", "{0102D683-ECAD-4E4A-9DB3-769F1E37D146}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.DataAccess", "VRTest.DataAccess\VRTest.DataAccess.csproj", "{0102D683-ECAD-4E4A-9DB3-769F1E37D146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.Web", "VRTest.Web\VRTest.Web.csproj", "{1510DC05-9481-4FF2-AD10-4F20080503B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
