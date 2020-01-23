@@ -1,0 +1,51 @@
+﻿@model VRTest.Models.NPVModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>NPVModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Compute">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CashFlowsDescription" class="control-label"></label>
+                <input asp-for="CashFlowsDescription" class="form-control" />
+                <span asp-validation-for="CashFlowsDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Increment" class="control-label"></label>
+                <input asp-for="Increment" class="form-control" />
+                <span asp-validation-for="Increment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpperBoundDiscountRate" class="control-label"></label>
+                <input asp-for="UpperBoundDiscountRate" class="form-control" />
+                <span asp-validation-for="UpperBoundDiscountRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LowerBoundDiscountRate" class="control-label"></label>
+                <input asp-for="LowerBoundDiscountRate" class="form-control" />
+                <span asp-validation-for="LowerBoundDiscountRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InitialCost" class="control-label"></label>
+                <input asp-for="InitialCost" class="form-control" />
+                <span asp-validation-for="InitialCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Compute" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

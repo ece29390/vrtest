@@ -1,0 +1,49 @@
+﻿@model IEnumerable<VRTest.Models.NPVDetailModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-area="" asp-controller="NPV" asp-action="Create">Compute for another NPV</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CashFlowSummary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InitialCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NPV)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CashFlowSummary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitialCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NPV)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

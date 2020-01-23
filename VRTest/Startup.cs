@@ -9,6 +9,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using VRTest.Models;
+using VRTest.Controllers;
+using VRTest.Services;
 
 namespace VRTest
 {
@@ -33,6 +37,14 @@ namespace VRTest
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
+            services.AddScoped<IHttpService, HttpService>();
+
+            services.AddDbContext<VRTestContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("VRTestContext")));
+            
+            //services.AddDbContext<VRTestContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("VRTestContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

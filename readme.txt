@@ -20,3 +20,10 @@ In the request body: (Sample Request)
 	,"Increment":0.25
 	,"InitialCost":1000
 }
+
+-The solution is set to run multiple projects
+-To input values for Cash Flows you may input the values separated by commas i.e 1000, 2000, 3000, 4000
+
+Disclaimer:
+-No validation on the UI
+-No additional layer of validation on the server side

@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.Entities", "VRTest.E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRTest.DataAccess", "VRTest.DataAccess\VRTest.DataAccess.csproj", "{0102D683-ECAD-4E4A-9DB3-769F1E37D146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRTest.Web", "VRTest.Web\VRTest.Web.csproj", "{1510DC05-9481-4FF2-AD10-4F20080503B8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0102D683-ECAD-4E4A-9DB3-769F1E37D146}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1510DC05-9481-4FF2-AD10-4F20080503B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
