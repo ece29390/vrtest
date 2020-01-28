@@ -13,6 +13,6 @@ namespace VRTest.Models
         {
         }
 
-        public DbSet<VRTest.Models.NPVDetailModel> NPVDetailModel { get; set; }
+        public DbSet<VRTestWeb.Razor.Models.NPVDetailModel> NPVDetailModel { get; set; }
     }
 }

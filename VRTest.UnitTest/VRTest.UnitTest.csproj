@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -20,6 +20,7 @@
     <ProjectReference Include="..\VRTest.Api\VRTest.Api.csproj" />
     <ProjectReference Include="..\VRTest.DataAccess\VRTest.DataAccess.csproj" />
     <ProjectReference Include="..\VRTest.Entities\VRTest.Entities.csproj" />
+    <ProjectReference Include="..\VRTest\VRTestWeb.Razor.csproj" />
   </ItemGroup>
 
 </Project>

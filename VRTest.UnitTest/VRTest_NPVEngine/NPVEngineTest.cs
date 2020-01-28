@@ -2,8 +2,9 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using VRTest.NPVEngine;
-namespace VRTest.UnitTest
+using NPVEngine= VRTest.NPVEngine;
+
+namespace VRTest.UnitTest.VRTest_NPVEngine
 {
    [TestFixture]
     public class NPVEngineTest
@@ -32,6 +33,7 @@ namespace VRTest.UnitTest
         [TestCase(-1000,1.5,1.0,.25)]
         [TestCase(-1000, 2.5, 1.0, .25)]
         [TestCase(-1000, 2.5, 1.0, .5)]
+        [TestCase(-1000, 3.5, 1.25, .75)]
         public void CalculateSetOfNPV_Given_All_Parameters_Is_Valid(
             double initialCost
             ,double upperLimit

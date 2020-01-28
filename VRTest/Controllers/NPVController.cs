@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using VRTest.Models;
-using VRTest.Services;
+using VRTestWeb.Razor.Models;
+using VRTestWeb.Razor.Services;
 
-namespace VRTest.Controllers
+namespace VRTestWeb.Razor.Controllers
 {
     public class NPVController : Controller
     {
@@ -45,15 +45,23 @@ namespace VRTest.Controllers
         public async Task<IActionResult> Compute([Bind("CashFlowsDescription,Increment,UpperBoundDiscountRate,LowerBoundDiscountRate,InitialCost")] NPVModel nPVModel)
         {
             var cashFlows = nPVModel.CashFlowsDescription.Split(',').Select(double.Parse).ToList<double>();
+
             var requestModel = new NPVRequestModel
             {
                 CashFlow = cashFlows
-                ,Increment = nPVModel.Increment
+                ,
+                Increment = nPVModel.Increment
                 ,InitialCost = nPVModel.InitialCost
                 ,LowerBoundDiscountRate = nPVModel.LowerBoundDiscountRate
                 ,UpperBoundDiscountRate = nPVModel.UpperBoundDiscountRate
             };
-            var npvResults = await _httpService.PostAsyncReturnAsJson<NPVRequestModel>(_npvApiUrl, requestModel);
+
+            var npvResults = await _httpService.GetAsJson(_npvApiUrl,requestModel);
+            if(string.IsNullOrEmpty(npvResults))
+            {
+                npvResults= await _httpService.PostAsyncReturnAsJson(_npvApiUrl, requestModel);
+            }
+           
             TempData["npvResults"] = npvResults;
             return RedirectToAction("Index");
         }

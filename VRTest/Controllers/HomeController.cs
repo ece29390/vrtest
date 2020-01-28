@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using VRTest.Models;
+using VRTestWeb.Razor.Models;
 
-namespace VRTest.Controllers
+namespace VRTestWeb.Razor.Controllers
 {
     public class HomeController : Controller
     {

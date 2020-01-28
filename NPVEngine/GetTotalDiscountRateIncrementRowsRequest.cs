@@ -10,7 +10,7 @@ namespace NPVEngine
 
         public void ValidateInputs()
         {
-            if(UpperBoundDiscountRate%Increment!=0)
+            if((UpperBoundDiscountRate-LowerBoundDiscountRate)%Increment!=0)
             {
                 throw new ArgumentException("Increment doesn't match UpperBoundDiscountRate");
             }

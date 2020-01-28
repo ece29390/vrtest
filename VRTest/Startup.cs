@@ -11,8 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using VRTest.Models;
-using VRTest.Controllers;
-using VRTest.Services;
+using VRTestWeb.Razor.Controllers;
+using VRTestWeb.Razor.Services;
 
 namespace VRTest
 {

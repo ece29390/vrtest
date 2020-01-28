@@ -20,6 +20,49 @@ namespace VRTest.Api.Controllers
         {
             this._npvDataAccess = npvDataAccess;
         }
+        
+        [HttpGet("{cashFlowsDescription}/{initialCost}/{upperBoundDiscountRate}/{lowerBoundDiscountRate}/{incrementRate}")]
+        public async Task<ActionResult<List<NPVSet>>> Get(
+            string cashFlowsDescription
+            , double initialCost
+            ,double upperBoundDiscountRate
+            ,double lowerBoundDiscountRate
+            , double incrementRate)
+        {
+            var getNPVPreviousRequestBy = new NPVPreviousRequest
+            {
+                CashFlowsDescription = cashFlowsDescription
+               ,
+                IncrementRate = incrementRate
+               ,
+                InitialCost = initialCost
+               ,
+                LowerBoundDiscountRate = lowerBoundDiscountRate
+               ,
+                UpperBoundDiscountRate = upperBoundDiscountRate
+            };
+            
+            var npvRequest = await _npvDataAccess.GetNPVPreviousRequestBy(getNPVPreviousRequestBy);
+            if(npvRequest==null)
+            {
+                return Ok(null);
+            }
+            var npvSet = new List<NPVSet>();
+
+            var previousResults = npvRequest.NPVPreviousResults.ToList();
+            npvSet = previousResults.Select(pr => new NPVSet
+            {
+                CashFlowSummary = npvRequest.CashFlowsDescription
+                    ,
+                DiscountRate = pr.DiscountRate
+                    ,
+                InitialCost = npvRequest.InitialCost
+                    ,
+                NPV = pr.NPV
+            }).ToList();
+
+            return Ok(npvSet);
+        }
 
         [HttpPost]
         public async Task<ActionResult<List<NPVSet>>> Post([FromBody] CalculateSetOfNPVRequest request)
@@ -32,14 +75,10 @@ namespace VRTest.Api.Controllers
                 ,LowerBoundDiscountRate = request.LowerBoundDiscountRate
                 ,UpperBoundDiscountRate = request.UpperBoundDiscountRate
             };
-            List<NPVSet> npvSet = null;
-            var npvRequest = await _npvDataAccess.GetNPVPreviousRequestBy(getNPVPreviousRequestBy);
-
-            if (npvRequest==null)
-            {
+           
                 var npvEngine = new NPVEngine.NPVEngine();
                 request.InitialCost = request.InitialCost * -1;
-                npvSet = npvEngine.CalculateSetOfNPV(request);
+                var npvSet = npvEngine.CalculateSetOfNPV(request);
 
                 getNPVPreviousRequestBy.NPVPreviousResults = new List<NPVPreviousResult>();
                 npvSet.ForEach(s => {
@@ -54,22 +93,7 @@ namespace VRTest.Api.Controllers
                 });
 
                 await _npvDataAccess.SaveNPVPreviousRequest(getNPVPreviousRequestBy);
-            }
-            else
-            {
-                npvSet = new List<NPVSet>();
-                var previousResults = npvRequest.NPVPreviousResults.ToList();
-                previousResults.ForEach(pr =>
-                {
-                    npvSet.Add(new NPVSet
-                    {
-                        CashFlowSummary = npvRequest.CashFlowsDescription
-                        ,DiscountRate = pr.DiscountRate
-                        ,InitialCost = npvRequest.InitialCost
-                        ,NPV= pr.NPV
-                    });
-                });
-            }
+           
 
            
             return Ok(npvSet);

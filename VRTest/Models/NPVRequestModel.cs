@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VRTestWeb.Razor.Services;
 
-namespace VRTest.Models
+namespace VRTestWeb.Razor.Models
 {
-    public class NPVRequestModel
+    public class NPVRequestModel:IConvertToUriParameter
     {
-        public List<double> CashFlow { get; set; }
+        public IList<double> CashFlow { get; set; }
         public double UpperBoundDiscountRate { get; set; }
         public double LowerBoundDiscountRate { get; set; }
         public double Increment { get; set; }
         public double InitialCost { get; set; }
+
+        public string ConvertToUriParameter()
+        {
+            return $"{string.Join(",",CashFlow)}/{InitialCost}/{UpperBoundDiscountRate}/{LowerBoundDiscountRate}/{Increment}";
+        }
+
+       
     }
 }

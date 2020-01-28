@@ -1,6 +1,6 @@
 using System;
 
-namespace VRTest.Models
+namespace VRTestWeb.Razor.Models
 {
     public class ErrorViewModel
     {
