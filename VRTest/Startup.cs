@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using VRTest.Models;
+
 using VRTestWeb.Razor.Controllers;
 using VRTest.Common.Services;
 

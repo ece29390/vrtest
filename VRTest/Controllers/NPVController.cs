@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using VRTest.Common.Models;
 using VRTest.Common.Services;
 using VRTestWeb.Razor.Models;
 

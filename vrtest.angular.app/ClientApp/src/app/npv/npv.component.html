@@ -69,3 +69,21 @@
     </tbody>
   </table>
 </div>
+<div *ngIf="npvList">
+  <table>
+    <thead>
+      <td>Cash Flow</td>
+      <td>Discount Rate</td>
+      <td>Initial Cost</td>
+      <td>NPV</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let npvItem of npvList">
+        <td>{{npvItem.cashFlowSummary}}</td>
+        <td>{{npvItem.discountRate}}</td>
+        <td>{{npvItem.initialCost}}</td>
+        <td>{{npvItem.npv}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

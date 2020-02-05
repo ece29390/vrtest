@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VRTestWeb.Razor.Models
+namespace VRTest.Common.Models
 {
     public class NPVDetailModel
     {

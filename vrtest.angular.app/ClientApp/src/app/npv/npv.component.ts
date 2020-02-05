@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class NpvComponent {
-
+    public npvList:NPVSet[];
     npvModel = {cashFlows:'',increment:0.0,upperBound:0.0,lowerBound:0.0,initialCost:0.0,cashFlow:0.0};
   
 
@@ -19,8 +19,9 @@ export class NpvComponent {
 
   public calculateNpvParameters(){
       console.log(this.npvModel);
-      this.http.post(this.baseUrl + 'api/npvdata/CalculateNpv',this.npvModel).subscribe(result => {
+      this.http.post<NPVSet[]>(this.baseUrl + 'api/npvdata/CalculateNpv',this.npvModel).subscribe(result => {
         console.log(result);
+        this.npvList = result;
        }, error => console.error(error));
   }
 
@@ -34,4 +35,11 @@ export class NpvComponent {
 
       this.npvModel.cashFlow = 0.0;
   }
+}
+
+interface NPVSet{
+  CashFlowSummary:string,
+  InitialCost:number,
+  DiscountRate:number,
+  NPV:number
 }

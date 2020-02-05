@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VRTest.Common.Services;
 
-namespace VRTestWeb.Razor.Models
+namespace VRTest.Common.Models
 {
     public class NPVRequestModel:IConvertToUriParameter
     {

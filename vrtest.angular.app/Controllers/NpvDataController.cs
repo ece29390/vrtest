@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using VRTest.Common.Models;
 using VRTest.Common.Services;
 
 namespace vrtest.angular.app.Controllers
@@ -29,13 +31,29 @@ namespace vrtest.angular.app.Controllers
         {
             
             var npvResults = await _httpService.GetAsJson(_npvApiUrl, model);
+
+            var cashFlows = model.CashFlows.Split(',').Select(double.Parse).ToList<double>();
+
+            var requestModel = new NPVRequestModel
+            {
+                CashFlow = cashFlows
+                ,
+                Increment = model.Increment
+                ,
+                InitialCost = model.InitialCost
+                ,
+                LowerBoundDiscountRate = model.LowerBound
+                ,
+                UpperBoundDiscountRate = model.UpperBound
+            };
+
             if (string.IsNullOrEmpty(npvResults))
             {
-                npvResults = await _httpService.PostAsyncReturnAsJson(_npvApiUrl, model);
+                npvResults = await _httpService.PostAsyncReturnAsJson(_npvApiUrl, requestModel);
             }
+            var npvs = JsonConvert.DeserializeObject<IList<NPVDetailModel>>(npvResults);
 
-         
-            return Ok(npvResults);
+            return Ok(npvs);
         }
     }
 }
