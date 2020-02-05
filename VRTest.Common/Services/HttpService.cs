@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VRTestWeb.Razor.Services
+namespace VRTest.Common.Services
 {
     public class HttpService:IHttpService
     {

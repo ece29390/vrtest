@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VRTestWeb.Razor.Services;
+using VRTest.Common.Services;
 
 namespace VRTestWeb.Razor.Models
 {

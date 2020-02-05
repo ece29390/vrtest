@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NPVEngine\NPVEngine.csproj" />
     <ProjectReference Include="..\VRTest.Api\VRTest.Api.csproj" />
+    <ProjectReference Include="..\VRTest.Common\VRTest.Common.csproj" />
     <ProjectReference Include="..\VRTest.DataAccess\VRTest.DataAccess.csproj" />
     <ProjectReference Include="..\VRTest.Entities\VRTest.Entities.csproj" />
     <ProjectReference Include="..\VRTest\VRTestWeb.Razor.csproj" />

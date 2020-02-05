@@ -10,9 +10,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VRTest.Common.Services;
 using VRTestWeb.Razor.Controllers;
 using VRTestWeb.Razor.Models;
-using VRTestWeb.Razor.Services;
+
 
 namespace VRTest.UnitTest.VRTestWeb_Razor
 {

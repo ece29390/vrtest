@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace VRTestWeb.Razor.Services
+namespace VRTest.Common.Services
 {
     public interface IConvertToUriParameter
     {

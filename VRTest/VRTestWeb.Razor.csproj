@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VRTest.Common\VRTest.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\NPV\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
