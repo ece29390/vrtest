@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-npv',
-  templateUrl: './npv.component.html'
+  templateUrl: './npv.component.html',
+  styleUrls:['./npv.component.css']
 })
 
 export class NpvComponent {
@@ -18,9 +19,9 @@ export class NpvComponent {
   }
 
   public calculateNpvParameters(){
-      console.log(this.npvModel);
+
       this.http.post<NPVSet[]>(this.baseUrl + 'api/npvdata/CalculateNpv',this.npvModel).subscribe(result => {
-        console.log(result);
+    
         this.npvList = result;
        }, error => console.error(error));
   }
@@ -34,6 +35,10 @@ export class NpvComponent {
       }
 
       this.npvModel.cashFlow = 0.0;
+  }
+
+  public resetCashFlow(){
+    this.npvModel.cashFlows="";
   }
 }
 

@@ -1,73 +1,37 @@
 <h1>Welcome to Net Present Value Calculators</h1>
 
-<div>
-  <table>
-    <thead>
+  <p>
+    <label class="lbl">Cash Flows</label>
+   
+        <input class="input" type="number" [(ngModel)]="npvModel.cashFlow"/>
+        <button class="btn" (click)="addToCashFlows()">Append To CashFlows</button>
+        <button class="btn" (click)="resetCashFlow()">Reset</button>
+  </p>
+  <p>
+    <textarea class="input-block input-width" [(ngModel)]="npvModel.cashFlows" disabled></textarea>
+  </p>
+  <p>
+    <label class="lbl">Increment</label>
+    <input class="input-block input-width" type="number" [(ngModel)]="npvModel.increment"/> 
+  </p>
+  <p>
+    <label class="lbl">Upper Bound Discount Rate</label>
+    <input class="input-block input-width" type="number" [(ngModel)]="npvModel.upperBound"/>
+  </p>
+  <p>
+    <label class="lbl">Lower Bound Discount Rate</label>
+    <input class="input-block input-width" type="number" [(ngModel)]="npvModel.lowerBound"/>
+  </p>
+  <p>
+    <label class="lbl">Initial Cost</label>
+    <input class="input-block input-width" type="number" [(ngModel)]="npvModel.initialCost"/>
+  </p>
+  <p>
+    <button class="btn" (click)="calculateNpvParameters()">Calculate</button>
+  </p>
 
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Cash Flows
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-           
-            <div>
-                <input type="number" [(ngModel)]="npvModel.cashFlow"/>
-                <button (click)="addToCashFlows()">Append To CashFlows</button>
-            </div>
-           
-           
-        </td>
-       
-      </tr>
-      <tr>
-          <td>
-            <textarea [(ngModel)]="npvModel.cashFlows" disabled></textarea>
-          </td>
-      </tr>
-      <tr>
-          <td>
-              Increment
-          </td>
-      </tr>
-      <tr>
-          <td><input type="number" [(ngModel)]="npvModel.increment"/></td>
-      </tr>
-      <tr>
-        <td>
-            Upper Bound Discount Rate
-        </td>
-    </tr>
-    <tr>
-        <td><input type="number" [(ngModel)]="npvModel.upperBound"/></td>
-    </tr>
-    <tr>
-        <td>
-            Lower Bound Discount Rate
-        </td>
-    </tr>
-    <tr>
-        <td><input type="number" [(ngModel)]="npvModel.lowerBound"/></td>
-    </tr>
-    <tr>
-        <td>
-            Initial Cost
-        </td>
-    </tr>
-    <tr>
-        <td><input type="number" [(ngModel)]="npvModel.initialCost"/></td>
-    </tr>
-      <tr>
-          <td>
-            <button (click)="calculateNpvParameters()">Calculate</button>
-          </td>
-      </tr>
-    </tbody>
-  </table>
+<div>
+ 
 </div>
 <div *ngIf="npvList">
   <table>

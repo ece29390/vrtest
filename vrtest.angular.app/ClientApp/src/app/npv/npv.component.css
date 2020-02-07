@@ -1,0 +1,55 @@
+.lbl {
+display: block;
+color: #757575;
+}
+
+.input-block{
+    display: block;
+    padding: 8px;
+}
+
+.input{
+    padding: 8px;
+}
+
+.btn{
+    color: #ffffff;
+    background-color: #009688;
+}
+
+.input-width{
+    width: 400px;
+}
+
+table {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
+}
+
+table thead td{
+    border: 1px solid white;
+}
+
+tbody tr td{
+    border: 1px solid gray;
+    background-color: silver;
+    font-size: 18px;
+}
+
+thead {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    border-top-width: 1px ;
+    border-bottom-width: 1px ;
+    border-right-width: 1px ;
+    border-left-width: 1px;
+    text-align: left;
+    padding-right: 8px;
+    padding-left: 8px;
+}
