@@ -27,7 +27,7 @@
     <input class="input-block input-width" type="number" [(ngModel)]="npvModel.initialCost"/>
   </p>
   <p>
-    <button class="btn" (click)="calculateNpvParameters()">Calculate</button>
+    <button class="btn" (click)="calculateNpvParameters()" [disabled]="isNotValid">Calculate</button>
   </p>
 
 <div>

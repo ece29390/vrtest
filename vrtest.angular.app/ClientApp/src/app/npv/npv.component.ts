@@ -1,5 +1,16 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {validate,Type} from 'validate-typescript'
+import { stringify } from 'querystring';
+
+const schema={
+  cashFlows:Type(String)
+  ,increment:Type(Number)
+  ,upperBound:Type(Number)
+  ,lowerBound:Type(Number)
+  ,initialCost:Type(Number)
+
+}
 
 @Component({
   selector: 'app-npv',
@@ -19,13 +30,31 @@ export class NpvComponent {
   }
 
   public calculateNpvParameters(){
-
-      this.http.post<NPVSet[]>(this.baseUrl + 'api/npvdata/CalculateNpv',this.npvModel).subscribe(result => {
     
-        this.npvList = result;
-       }, error => console.error(error));
+      
+
+    this.http.post<NPVSet[]>(this.baseUrl + 'api/npvdata/CalculateNpv',this.npvModel).subscribe(result => {
+  
+      this.npvList = result;
+      }, error => console.error(error));
   }
 
+  get isNotValid()
+  {
+    var isValid = false;
+    try
+    {
+      var input = validate(schema,this.npvModel);
+      isValid = (input.increment===0 || input.initialCost===0||input.lowerBound===0||input.upperBound===0) || (input.lowerBound>=input.upperBound);
+    }
+    catch(error)
+    {
+     
+      isValid = true;
+    }
+    return isValid;
+  }
+  
   public addToCashFlows(){
       
       if(this.npvModel.cashFlows != ''){
