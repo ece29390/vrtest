@@ -40,4 +40,4 @@ vrtest.angular.app (https://localhost:44355/npv)
 
 -The solution is set to run multiple projects (VRTest.Api, VRTestWeb.Razor, vrtest.angular.app)
 -Validation on the server side if the increment is correct with respect to the Upper Bound Discount Rate. The VRTest.Api throws an error if the value is incorrect.
-
+-Run the ng serve before running the solution
